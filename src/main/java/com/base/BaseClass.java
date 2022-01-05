@@ -14,8 +14,8 @@ public class BaseClass {
 
 
      @BeforeMethod
-    public void setup() throws InterruptedException {
-         if (System.getProperty("browser").equalsIgnoreCase("chrome")){
+    public void setup()  {
+         if (System.getProperty("browser").equalsIgnoreCase("Chrome")){
              WebDriverManager.chromedriver().setup();
              driver=new ChromeDriver();
          } else if (System.getProperty("browser").equalsIgnoreCase("Firefox")){
@@ -27,8 +27,12 @@ public class BaseClass {
          }
          driver.manage().window().maximize();
         driver.get(System.getProperty("url"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[contains(text(), 'I agree')]")).click();
+         try {
+             Thread.sleep(2000);
+         } catch (InterruptedException e) {
+             e.printStackTrace();
+         }
+         driver.findElement(By.xpath("//*[contains(text(), 'I agree')]")).click();
     }
 
     @AfterMethod
