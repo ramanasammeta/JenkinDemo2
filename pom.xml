@@ -13,7 +13,11 @@
             <version>4.1.1</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.9</version>
+        </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -60,9 +64,9 @@
                         <!--suppress UnresolvedMavenProperty -->
                         <suiteXmlFile>${xmlFiles}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
+                   <systemPropertyVariables>
                         <!--suppress UnresolvedMavenProperty -->
-                        <executionBrowser>${browser}</executionBrowser>
+                       <executionBrowser>${browser}</executionBrowser>
                         <appURL>${url}</appURL>
                     </systemPropertyVariables>
                 </configuration>
